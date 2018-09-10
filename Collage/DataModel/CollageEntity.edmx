@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VasmmModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADMISSIONFORMDETAILS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PHOTOID" Type="varbinary(max)" />
+          <Property Name="PHOTOIDTYPE" Type="nvarchar" MaxLength="225" />
+          <Property Name="ENROLMENTNO" Type="nvarchar" MaxLength="225" />
+          <Property Name="CENTERCODE" Type="nvarchar" MaxLength="100" />
+          <Property Name="STUDENTNAME" Type="nvarchar" MaxLength="225" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="GENDER" Type="nvarchar" MaxLength="20" />
+          <Property Name="COURSECODE" Type="nvarchar" MaxLength="225" />
+          <Property Name="ACCADEMYNAME" Type="nvarchar" MaxLength="225" />
+          <Property Name="FATHERNAME" Type="nvarchar" MaxLength="225" />
+          <Property Name="MOTHERNAME" Type="nvarchar" MaxLength="225" />
+          <Property Name="NATIONALITY" Type="nvarchar" MaxLength="225" />
+          <Property Name="ADDRESSES" Type="nvarchar(max)" />
+          <Property Name="MOBILENO" Type="nvarchar" MaxLength="20" />
+          <Property Name="NAMEOFSTUDYCENTER" Type="nvarchar" MaxLength="225" />
+          <Property Name="CREATEDDTM" Type="nvarchar" MaxLength="225" />
+          <Property Name="ISACTIVE" Type="bit" />
+        </EntityType>
+        <EntityType Name="COURSEMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COURSENAME" Type="nvarchar" MaxLength="225" />
+          <Property Name="CREATEDDTM" Type="nvarchar" MaxLength="225" />
+          <Property Name="ISACTIVE" Type="bit" />
+        </EntityType>
+        <EntityType Name="FACULITYDETAIL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="225" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="100" />
+          <Property Name="TownCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dob" Type="datetime" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="100" />
+          <Property Name="FACULTYTYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="HomeTel" Type="bigint" />
+          <Property Name="MobTel" Type="bigint" />
+          <Property Name="EMAILID" Type="nvarchar" MaxLength="110" />
+          <Property Name="DESIGNATION" Type="nvarchar" MaxLength="220" />
+          <Property Name="PAYSCALE" Type="float" />
+          <Property Name="APPOINTMENTDATE" Type="datetime" />
+          <Property Name="QUALIFICATION" Type="nvarchar" MaxLength="225" />
+          <Property Name="PHOTOID" Type="varbinary" MaxLength="225" />
+          <Property Name="DETAILS" Type="nvarchar(max)" />
+          <Property Name="CREATEDDTM" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LATESTNEWS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TITLE" Type="nvarchar" MaxLength="225" />
+          <Property Name="NEWSDETAILS" Type="nvarchar(max)" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="CREATEDDTM" Type="datetime" />
+          <Property Name="ISACTIVE" Type="bit" />
+        </EntityType>
+        <EntityType Name="RollMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Detail" Type="nvarchar" MaxLength="225" />
+          <Property Name="CREATEDDTM" Type="datetime" />
+          <Property Name="ISACTIVE" Type="bit" />
+        </EntityType>
+        <EntityType Name="STUDENTSENQUIRY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STUDENTNAME" Type="nvarchar" MaxLength="225" />
+          <Property Name="COURSENAME" Type="nvarchar" MaxLength="225" />
+          <Property Name="STUDENTEMAIL" Type="nvarchar" MaxLength="225" />
+          <Property Name="PHONE" Type="nvarchar" MaxLength="225" />
+          <Property Name="QUERY" Type="nvarchar" MaxLength="225" />
+          <Property Name="CREATEDDTM" Type="datetime" />
+          <Property Name="ISACTIVE" Type="bit" />
+        </EntityType>
+        <EntityType Name="VASMUSER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="225" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="225" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="225" />
+          <Property Name="Password" Type="nvarchar" MaxLength="225" />
+          <Property Name="Number" Type="nvarchar" MaxLength="20" />
+          <Property Name="Rolid" Type="int" />
+          <Property Name="ISACTIVE" Type="bit" />
+          <Property Name="CREATEDDTM" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="VasmmModelStoreContainer">
+          <EntitySet Name="ADMISSIONFORMDETAILS" EntityType="Self.ADMISSIONFORMDETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COURSEMASTER" EntityType="Self.COURSEMASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FACULITYDETAIL" EntityType="Self.FACULITYDETAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LATESTNEWS" EntityType="Self.LATESTNEWS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RollMaster" EntityType="Self.RollMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STUDENTSENQUIRY" EntityType="Self.STUDENTSENQUIRY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VASMUSER" EntityType="Self.VASMUSER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VasmmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADMISSIONFORMDETAIL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PHOTOID" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PHOTOIDTYPE" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="ENROLMENTNO" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="CENTERCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STUDENTNAME" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Name="GENDER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="COURSECODE" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="ACCADEMYNAME" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="FATHERNAME" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="MOTHERNAME" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="NATIONALITY" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESSES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MOBILENO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAMEOFSTUDYCENTER" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDTM" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="ISACTIVE" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="COURSEMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COURSENAME" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDTM" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="ISACTIVE" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="FACULITYDETAIL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TownCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dob" Type="DateTime" Precision="3" />
+          <Property Name="Postcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FACULTYTYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HomeTel" Type="Int64" />
+          <Property Name="MobTel" Type="Int64" />
+          <Property Name="EMAILID" Type="String" MaxLength="110" FixedLength="false" Unicode="true" />
+          <Property Name="DESIGNATION" Type="String" MaxLength="220" FixedLength="false" Unicode="true" />
+          <Property Name="PAYSCALE" Type="Double" />
+          <Property Name="APPOINTMENTDATE" Type="DateTime" Precision="3" />
+          <Property Name="QUALIFICATION" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="PHOTOID" Type="Binary" MaxLength="225" FixedLength="false" />
+          <Property Name="DETAILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDTM" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="LATESTNEW">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TITLE" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="NEWSDETAILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDDTM" Type="DateTime" Precision="3" />
+          <Property Name="ISACTIVE" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="STUDENTSENQUIRY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STUDENTNAME" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="COURSENAME" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="STUDENTEMAIL" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="QUERY" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDTM" Type="DateTime" Precision="3" />
+          <Property Name="ISACTIVE" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="VASMUSER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Rolid" Type="Int32" />
+          <Property Name="ISACTIVE" Type="Boolean" />
+          <Property Name="CREATEDDTM" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="VasmmEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMISSIONFORMDETAILS" EntityType="Self.ADMISSIONFORMDETAIL" />
+          <EntitySet Name="COURSEMASTERs" EntityType="Self.COURSEMASTER" />
+          <EntitySet Name="FACULITYDETAILs" EntityType="Self.FACULITYDETAIL" />
+          <EntitySet Name="LATESTNEWS" EntityType="Self.LATESTNEW" />
+          <EntitySet Name="STUDENTSENQUIRies" EntityType="Self.STUDENTSENQUIRY" />
+          <EntitySet Name="VASMUSERs" EntityType="Self.VASMUSER" />
+          <EntitySet Name="RollMasters" EntityType="VasmmModel.RollMaster" />
+        </EntityContainer>
+        <EntityType Name="RollMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDTM" Type="DateTime" Precision="3" />
+          <Property Name="ISACTIVE" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VasmmModelStoreContainer" CdmEntityContainer="VasmmEntities">
+          <EntitySetMapping Name="ADMISSIONFORMDETAILS">
+            <EntityTypeMapping TypeName="VasmmModel.ADMISSIONFORMDETAIL">
+              <MappingFragment StoreEntitySet="ADMISSIONFORMDETAILS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PHOTOID" ColumnName="PHOTOID" />
+                <ScalarProperty Name="PHOTOIDTYPE" ColumnName="PHOTOIDTYPE" />
+                <ScalarProperty Name="ENROLMENTNO" ColumnName="ENROLMENTNO" />
+                <ScalarProperty Name="CENTERCODE" ColumnName="CENTERCODE" />
+                <ScalarProperty Name="STUDENTNAME" ColumnName="STUDENTNAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="COURSECODE" ColumnName="COURSECODE" />
+                <ScalarProperty Name="ACCADEMYNAME" ColumnName="ACCADEMYNAME" />
+                <ScalarProperty Name="FATHERNAME" ColumnName="FATHERNAME" />
+                <ScalarProperty Name="MOTHERNAME" ColumnName="MOTHERNAME" />
+                <ScalarProperty Name="NATIONALITY" ColumnName="NATIONALITY" />
+                <ScalarProperty Name="ADDRESSES" ColumnName="ADDRESSES" />
+                <ScalarProperty Name="MOBILENO" ColumnName="MOBILENO" />
+                <ScalarProperty Name="NAMEOFSTUDYCENTER" ColumnName="NAMEOFSTUDYCENTER" />
+                <ScalarProperty Name="CREATEDDTM" ColumnName="CREATEDDTM" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COURSEMASTERs">
+            <EntityTypeMapping TypeName="VasmmModel.COURSEMASTER">
+              <MappingFragment StoreEntitySet="COURSEMASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COURSENAME" ColumnName="COURSENAME" />
+                <ScalarProperty Name="CREATEDDTM" ColumnName="CREATEDDTM" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACULITYDETAILs">
+            <EntityTypeMapping TypeName="VasmmModel.FACULITYDETAIL">
+              <MappingFragment StoreEntitySet="FACULITYDETAIL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="TownCity" ColumnName="TownCity" />
+                <ScalarProperty Name="Dob" ColumnName="Dob" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="FACULTYTYPE" ColumnName="FACULTYTYPE" />
+                <ScalarProperty Name="HomeTel" ColumnName="HomeTel" />
+                <ScalarProperty Name="MobTel" ColumnName="MobTel" />
+                <ScalarProperty Name="EMAILID" ColumnName="EMAILID" />
+                <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+                <ScalarProperty Name="PAYSCALE" ColumnName="PAYSCALE" />
+                <ScalarProperty Name="APPOINTMENTDATE" ColumnName="APPOINTMENTDATE" />
+                <ScalarProperty Name="QUALIFICATION" ColumnName="QUALIFICATION" />
+                <ScalarProperty Name="PHOTOID" ColumnName="PHOTOID" />
+                <ScalarProperty Name="DETAILS" ColumnName="DETAILS" />
+                <ScalarProperty Name="CREATEDDTM" ColumnName="CREATEDDTM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LATESTNEWS">
+            <EntityTypeMapping TypeName="VasmmModel.LATESTNEW">
+              <MappingFragment StoreEntitySet="LATESTNEWS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="NEWSDETAILS" ColumnName="NEWSDETAILS" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="CREATEDDTM" ColumnName="CREATEDDTM" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STUDENTSENQUIRies">
+            <EntityTypeMapping TypeName="VasmmModel.STUDENTSENQUIRY">
+              <MappingFragment StoreEntitySet="STUDENTSENQUIRY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="STUDENTNAME" ColumnName="STUDENTNAME" />
+                <ScalarProperty Name="COURSENAME" ColumnName="COURSENAME" />
+                <ScalarProperty Name="STUDENTEMAIL" ColumnName="STUDENTEMAIL" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="QUERY" ColumnName="QUERY" />
+                <ScalarProperty Name="CREATEDDTM" ColumnName="CREATEDDTM" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VASMUSERs">
+            <EntityTypeMapping TypeName="VasmmModel.VASMUSER">
+              <MappingFragment StoreEntitySet="VASMUSER">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Rolid" ColumnName="Rolid" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDTM" ColumnName="CREATEDDTM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RollMasters">
+            <EntityTypeMapping TypeName="VasmmModel.RollMaster">
+              <MappingFragment StoreEntitySet="RollMaster">
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="CREATEDDTM" ColumnName="CREATEDDTM" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

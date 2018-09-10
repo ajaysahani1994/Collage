@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collage", "Collage\Collage.csproj", "{32ABB881-807E-4E6D-9DB8-D83FCE7DE3E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collage.Tests", "Collage.Tests\Collage.Tests.csproj", "{AE4ED691-58AD-433A-8553-BE00B8F40D81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32ABB881-807E-4E6D-9DB8-D83FCE7DE3E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32ABB881-807E-4E6D-9DB8-D83FCE7DE3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32ABB881-807E-4E6D-9DB8-D83FCE7DE3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32ABB881-807E-4E6D-9DB8-D83FCE7DE3E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE4ED691-58AD-433A-8553-BE00B8F40D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE4ED691-58AD-433A-8553-BE00B8F40D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE4ED691-58AD-433A-8553-BE00B8F40D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE4ED691-58AD-433A-8553-BE00B8F40D81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B26E3C7-53B6-4779-AA98-BD6294406D26}
+	EndGlobalSection
+EndGlobal

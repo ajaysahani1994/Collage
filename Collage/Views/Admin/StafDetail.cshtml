@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Collage.DataModel.FACULITYDETAIL>
+
+@{
+    ViewBag.Title = "StafDetail";
+}
+
+<h2>StafDetail</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NAME)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.TownCity)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Postcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FACULTYTYPE)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.EMAILID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESIGNATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAYSCALE)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.QUALIFICATION)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.DETAILS)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.TownCity)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Postcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FACULTYTYPE)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAILID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESIGNATION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAYSCALE)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.QUALIFICATION)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.DETAILS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATEDDTM)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
